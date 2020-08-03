@@ -1,0 +1,395 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* フォントの設定 ---------------------------*/
+input::-webkit-input-placeholder {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #999999;
+}
+input:-ms-input-placeholder {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #999999;
+}
+input::-ms-input-placeholder {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #999999;
+}
+input::placeholder {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #999999;
+}
+
+/* アイテムの設定 ==========================*/
+label {
+  cursor: pointer;
+}
+
+/* ボタン ---------------------------*/
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(45deg, #75D701 30%, #56A902 90%);
+  -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 999px;
+  padding: 15px 60px;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus {
+  text-decoration: none;
+}
+
+.btn::-moz-foucus-inner {
+  padding: 0;
+  border: none;
+}
+
+.btn:active {
+  -webkit-box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* インプット ---------------------------*/
+select,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+  outline: 0;
+}
+
+.input-item {
+  width: 90%;
+  margin-top: 20px;
+}
+
+select,
+input {
+  width: 100%;
+  height: 40px;
+  padding: 3px 5px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  -webkit-transition: border-color ease .2s;
+  transition: border-color ease .2s;
+}
+
+select:focus,
+input:focus {
+  border-color: #75D701;
+}
+
+input[type="radio"] {
+  display: none;
+  border: 0;
+  margin: 0;
+}
+
+.input-radio {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+}
+
+.input-radio label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.input-radio label:before,
+.input-radio label:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+.input-radio label:before {
+  background-color: #fff;
+  top: 0px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #505050;
+}
+
+.input-radio label:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+}
+
+.input-radio input[type="radio"]:checked + label:after {
+  background-color: #56A902;
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  display: none;
+}
+
+.input-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  margin-top: 20px;
+}
+
+.input-checkbox label {
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-checkbox label:before,
+.input-checkbox label:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+.input-checkbox label:before {
+  background: #fff;
+  top: 2px;
+  left: 0px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #505050;
+  border-radius: 4px;
+}
+
+.input-checkbox label:after {
+  top: 8px;
+  left: 5px;
+  width: 6px;
+  height: 11px;
+  margin-top: -5.5px;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-radius: 1.5px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: border-bottom-color, border-right-color .2s ease;
+  transition: border-bottom-color, border-right-color .2s ease;
+}
+
+.input-checkbox input[type="checkbox"]:checked + label:after {
+  border-color: #56A902;
+}
+
+/* ボディー ==========================*/
+body {
+  background-color: #F8F8FF;
+}
+
+/* ヘッダー ==========================*/
+.inputCompleat {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  background-color: #fff;
+  color: #75D701;
+  font-size: 32px;
+  font-weight: 400;
+  border: solid;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding-top: 10px;
+  background-color: #3B4E32;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+header .header-inner {
+  width: 400px;
+}
+
+header .header-inner .header-top-wrapper {
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .header-inner .header-top-wrapper .header-logo {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 30px;
+}
+
+header .header-inner .header-top-wrapper .view-time {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 30px;
+}
+
+.header-bottom-wrapper {
+  background-color: #F8F8FF;
+  width: 100%;
+}
+
+.header-bottom-wrapper .inputStep-wrapper {
+  width: 400px;
+  background-color: #F8F8FF;
+  margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-bottom-wrapper .inputStep-wrapper .inputStep {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 40px;
+  background: linear-gradient(45deg, #75D701 30%, #56A902 90%);
+  -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* メイン ============================*/
+main {
+  width: 100%;
+  margin: 120px 0;
+}
+
+main .section-ttl {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #070700;
+}
+
+main .form-items {
+  width: 670px;
+  margin: 0 auto;
+}
+
+main .form-items label {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #070700;
+}
+
+/* フッター ==========================*/
+/* スマートフォン レスポンシブの設定 =====*/
+/* スマホ用レスポンシブ======================*/
+@media (max-width: 670px) {
+  /* ヘッダー ==========================*/
+  /* メイン ============================*/
+  main {
+    width: 100%;
+    margin: 120px 0 40px;
+  }
+  main .section-ttl {
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 35px;
+    color: #070700;
+    margin: 20px 0;
+  }
+  main .form-items {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px 15px 40px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+  }
+  main .form-items .input-item {
+    width: 100%;
+  }
+  main .form-items .input-item label {
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #070700;
+  }
+  main .form-items .input-item-checkBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .form-items .input-item-checkBox .input-radio {
+    width: calc((100% - (10px * 2))/ 3 - 1px);
+  }
+  main .btn-wrapper {
+    margin-top: 40px;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  /* フッター ==========================*/
+}
+
+/* タブレット レスポンシブの設定 ========*/
+/*# sourceMappingURL=main.css.map */
