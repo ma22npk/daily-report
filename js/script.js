@@ -69,8 +69,6 @@ function getNow() {
 //pushメソッドで配列データの末尾に新たな要素を追加する
 const numbers =  [1,2,3,4,5,];
 numbers.push(6,7,8,9);
-
-
 //【アコーディオンメニュー】
 jQuery('.accordion__head').click(function () {
 jQuery(this).next().slideToggle();
