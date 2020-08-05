@@ -5,33 +5,54 @@
 }
 
 /* フォントの設定 ---------------------------*/
+.section-ttl {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #F8F8FF;
+  text-align: center;
+}
+
+.section-subTtl {
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #070700;
+  margin-bottom: 10px;
+}
+
 input::-webkit-input-placeholder {
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 200;
   line-height: 28px;
-  color: #999999;
+  color: #c7c5c5;
 }
+
 input:-ms-input-placeholder {
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 200;
   line-height: 28px;
-  color: #999999;
+  color: #c7c5c5;
 }
+
 input::-ms-input-placeholder {
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 200;
   line-height: 28px;
-  color: #999999;
+  color: #c7c5c5;
 }
+
 input::placeholder {
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 200;
   line-height: 28px;
-  color: #999999;
+  color: #c7c5c5;
 }
 
 /* アイテムの設定 ==========================*/
@@ -45,17 +66,24 @@ label {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
-  background: linear-gradient(45deg, #75D701 30%, #56A902 90%);
+  border: solid 2px #fff;
+  background: #56A902;
   -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
           box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
   border-radius: 999px;
-  padding: 15px 60px;
+  padding: 15px 30px;
   text-decoration: none;
 }
 
 .btn:hover,
 .btn:focus {
-  text-decoration: none;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  color: #fff;
+  border: solid 2px #fff;
+  background: #3B4E32;
+  -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .btn::-moz-foucus-inner {
@@ -68,6 +96,11 @@ label {
           box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 0.1);
 }
 
+.btn-hidden {
+  opacity: .5;
+  pointer-events: none;
+}
+
 /* インプット ---------------------------*/
 select,
 input {
@@ -76,6 +109,8 @@ input {
   border: 0;
   background-color: #fff;
   outline: 0;
+  font-weight: bold;
+  color: #070700;
 }
 
 .input-item {
@@ -87,7 +122,7 @@ select,
 input {
   width: 100%;
   height: 40px;
-  padding: 3px 5px;
+  padding: 2px 12px;
   border: 1px solid lightgrey;
   border-radius: 2px;
   -webkit-transition: border-color ease .2s;
@@ -97,6 +132,10 @@ input {
 select:focus,
 input:focus {
   border-color: #75D701;
+}
+
+select:hover {
+  cursor: pointer;
 }
 
 input[type="radio"] {
@@ -134,7 +173,7 @@ input[type="radio"] {
   left: 0;
   width: 18px;
   height: 18px;
-  border: 1px solid #505050;
+  border: 1px solid #383a3a;
 }
 
 .input-radio label:after {
@@ -185,7 +224,7 @@ input[type="checkbox"] {
   left: 0px;
   width: 18px;
   height: 18px;
-  border: 1px solid #505050;
+  border: 1px solid #383a3a;
   border-radius: 4px;
 }
 
@@ -277,7 +316,7 @@ header .header-inner .header-top-wrapper .view-time {
 }
 
 .header-bottom-wrapper .inputStep-wrapper {
-  width: 400px;
+  width: 360px;
   background-color: #F8F8FF;
   margin: 10px auto;
   display: -webkit-box;
@@ -294,15 +333,67 @@ header .header-inner .header-top-wrapper .view-time {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  width: 120px;
-  height: 40px;
-  background: linear-gradient(45deg, #75D701 30%, #56A902 90%);
-  -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  font-size: 22px;
+  width: 110px;
+  height: 30px;
+  border: solid 2px #fff;
+  border: solid 2px #56A902;
+  -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: #56A902;
+}
+
+.stamp-complete {
+  position: relative;
+  -webkit-transition: all;
+  transition: all;
+}
+
+.stamp-complete::after {
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  position: absolute;
+  left: -20px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  content: "完了";
+  line-height: 100%;
+  border: solid red 3px;
+  border-radius: 50%;
+  color: red;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  font-size: 14px;
+  opacity: .9;
+}
+
+.stamp-perfect {
+  position: relative;
+}
+
+.stamp-perfect::after {
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  position: absolute;
+  left: -20px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  content: "完璧";
+  line-height: 100%;
+  border: solid blue 3px;
+  border-radius: 50%;
+  color: blue;
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: .9;
 }
 
 /* メイン ============================*/
@@ -311,25 +402,146 @@ main {
   margin: 120px 0;
 }
 
-main .section-ttl {
-  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 35px;
-  color: #070700;
+main section {
+  margin: 10px auto;
+  height: 100%;
+  padding: 20px 0;
 }
 
-main .form-items {
-  width: 670px;
+main section .section-item-wrapper {
+  -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  width: 370px;
   margin: 0 auto;
 }
 
-main .form-items label {
+main section .section-ttl-wrapper {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: #75D701;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  padding: 10px 0 10px;
+}
+
+main .inner {
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+}
+
+main .inner .row2-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .inner .row2-wrapper .input-item.input-item-small {
+  width: calc((100% - 20px) / 2 - 1px);
+}
+
+main .inner .title-area {
+  background-color: #56A902;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+main .inner label,
+main .inner .accordion-header-txt {
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   color: #070700;
+}
+
+.input-withUnit-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+}
+
+.input-withUnit-wrapper input {
+  width: calc((100% - (10px + 30px)));
+}
+
+.input-withUnit-wrapper .unit {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin-top: auto;
+}
+
+/* アコーディオン ---------------------------*/
+.accordion {
+  background-color: #F8F8FF;
+  padding: 4px 8px;
+  -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin: 0 0 20px;
+}
+
+.accordion .accordion-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.accordion .accordion-header:hover {
+  opacity: .6;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.accordion .accordion-header .accordion-header-txt {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 30%;
+  height: auto;
+  word-break: break-all;
+  line-height: 24px;
+}
+
+.accordion .accordion-header .accordion-header-icon {
+  font-size: 20px;
+  color: #070700;
+}
+
+.accordion .accordion-body {
+  margin: 10px auto;
+  border-top: solid 1px #c7c5c5;
+}
+
+.second-accordion {
+  background-color: #8bd8a52d;
 }
 
 /* フッター ==========================*/
@@ -342,34 +554,23 @@ main .form-items label {
     width: 100%;
     margin: 120px 0 40px;
   }
-  main .section-ttl {
-    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 35px;
-    color: #070700;
-    margin: 20px 0;
-  }
-  main .form-items {
-    width: 400px;
+  main .inner {
+    width: 100%;
     margin: 0 auto;
     padding: 20px 15px 40px;
     background: #fff;
-    -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
   }
-  main .form-items .input-item {
+  main .inner .input-item {
     width: 100%;
   }
-  main .form-items .input-item label {
+  main .inner .input-item label {
     font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
     color: #070700;
   }
-  main .form-items .input-item-checkBox {
+  main .inner .input-item-checkBox {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -378,9 +579,13 @@ main .form-items label {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  main .form-items .input-item-checkBox .input-radio {
-    width: calc((100% - (10px * 2))/ 3 - 1px);
+  main .inner .input-item-checkBox .input-radio {
+    margin-bottom: 10px;
   }
   main .btn-wrapper {
     margin-top: 40px;

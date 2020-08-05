@@ -9,6 +9,12 @@ let taxRate = 1.1;
 let unTax = 20000;
 //税込金額
 let inTax = 11000;
+//総売上
+let salesAll = 200000;
+//ディナー売り上げ
+let dinnerSales = 150000;
+//ランチ売り上げ
+let lunchSales = 50000;
 //店舗エリア
 let area = ['埼玉', '東京', '名古屋', '大阪'];
 //クレジットカード会社
@@ -27,18 +33,22 @@ const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 let date = [1 <= 31];
 //曜日
 const weekDays = ['月', '火', '水', '木', '金', '土', '日'];
-// 関数 =============================================
+// 計算式 =============================================
 //税込価格を求める (税抜き価格＊消費税率)
 const mathInTax = unTax * taxRate;
 //税抜き価格を求める（税込価格/消費税率）
 const mathUnTax = inTax / taxRate;
 //税抜き、税込価格のさを求める
 const mathTax = inTax - unTax;
+// //ランチの売り上げを求める（総売上 - ディナーの売り上げ）
+// const mathSalesLunch = salesAll - dinnerSales;
+// //ディナーの売り上げを求める（総売上 - ランチの売り上げ）
+// const mathSalesDinner = salesAll - lunchSales;
+//現在の日時を表示してHTMLに表示する======================
 //Dateオブジェクトで本日の日付を取得する
 let today = new Date();
-//現在の日時を表示してHTMLに表示する======================
 document.getElementById("view-time").innerHTML = getNow();
-//
+//日時の変数設定
 function getNow() {
   let now = new Date();
   let year = now.getFullYear();
@@ -51,4 +61,18 @@ function getNow() {
   let dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土", ][dayOfWeek]; //曜日（日本語表記）
   let allDate = year + "年" + mon + "月" + day + "日" + dayOfWeekStr + "曜日" /*+ hour + "時" + min +"分" + sec + "秒"*/ ;
   return allDate;
-}
+};
+
+//
+//onChange(フォームパーツで変化が起きた時に発生するイベント)
+// その他 ===========================
+//pushメソッドで配列データの末尾に新たな要素を追加する
+const numbers =  [1,2,3,4,5,];
+numbers.push(6,7,8,9);
+
+
+//【アコーディオンメニュー】
+jQuery('.accordion__head').click(function () {
+jQuery(this).next().slideToggle();
+jQuery(this).children('.fa-arrow-circle-down').toggleClass( 'fa-arrow-circle-left' );
+});

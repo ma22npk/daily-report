@@ -14,6 +14,7 @@
   <!--headタグの直前にCSSを読み込む-->
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/main.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <!-- タイトルバー(googleで検索したときの表示名になるのでSEO的に超重要)-->
   <title>革新的日報mk-4</title>
 </head>
@@ -32,153 +33,271 @@
     </div>
     <div class="header-bottom-wrapper">
       <div class="inputStep-wrapper">
-        <div class="inputStep staff">スタッフ</div>
-        <div class="inputStep sales">売上</div>
-        <div class="inputStep purchase">現金出金</div>
+        <div class="inputStep staff perfect">スタッフ</div>
+        <div class="inputStep sales stamp-complete">売上</div>
+        <div class="inputStep purchase stamp-perfect complete">現金出金</div>
       </div>
     </div>
   </header><!-- /header -->
   <!-- main -->
   <main>
-    <div class="form-items">
-      <!-- section -->
-      <section class="staff">
+    <!-- section -->
+    <section class="staff">
+      <div class="section-item-wrapper">
+        <div class="section-ttl-wrapper">
+          <!-- section-ttl -->
+          <h2 class="section-ttl">スタッフ</h2><!-- /section-ttl -->
+        </div>
+        <div class="inner">
+          <div class="row2-wrapper">
+            <div class="input-item input-item-small">
+              <label for="store">店舗</label>
+              <select class="store" id="store" type="store" name="store">
+                <!-- <option class="value-blank" value="">店舗を選択</option> -->
+                <option value="store-meito">名東区店</option>
+                <option value="store-kakuozan">覚王山店</option>
+                <option value="store-sakae">栄店</option>
+                <option value="store-ohsu">大須店</option>
+              </select>
+            </div>
+            <div class="input-item input-item-small">
+              <label for="staffPost">役職</label>
+              <select class="staffPost" id="staffPost" type="text" name="staffPost">
+                <!-- <option class="value-blank" value="">役職を選択</option> -->
+                <option value="staffPost-manager">店長</option>
+                <!-- <option value="">副店長</option> -->
+                <!-- <option value="">料理長</option> -->
+                <option value="staffPost-employee">正社員</option>
+                <option value="staffPost-owner">オーナー</option>
+                <option value="staffPost-irregular">その他スタッフ</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-item">
+            <label for="report-writer">日報記入者</label>
+            <input class="report-writer" id="report-writer" type="text" name="report-writer" value=""
+              placeholder="（例）何野 なにがし">
+            <!-- <select>
+                <option value="">日報作成者を選んでください</option>
+                <option value="michi">伊藤通</option>
+                <option value="nishi">西岡</option>
+                <option value="kido">木戸</option>
+                <option value="sogo">十河</option>
+                <option value="waka">伊藤美</option>
+                <option value="matsu">松本</option>
+                <option value="ike">池田</option>
+                <option value="naka">中山</option>
+                <option value="other">その他</option>
+              </select> -->
+          </div>
+        </div>
+      </div>
+    </section><!-- /section -->
+    <!-- 売り上げのsection -->
+    <section class="sales">
+      <div class="section-item-wrapper">
         <!-- section-ttl -->
-        <h2 class="section-ttl">スタッフ</h2><!-- /section-ttl -->
-        <div class="input-item">
-          <label for="">店舗</label>
-          <select class="form-custom" aria-placeholder="店舗を選択してください">
-            <option class="value-blank" value="">店舗を選択してください</option>
-            <option value="store-meito">名東区店</option>
-            <option value="store-kakuozan">覚王山店</option>
-            <option value="store-sakae">栄店</option>
-            <option value="store-ohsu">大須店</option>
-
-          </select>
+        <div class="section-ttl-wrapper">
+          <h2 class="section-ttl">売上</h2><!-- /section-ttl -->
         </div>
+        <div class="inner">
+          <!-- <div class="input-item">
+              <label for="">日付</label>
+              <input type="date" name="date">
+            </div> -->
+          <div class="input-item">
+            <label for="sales-unTax">税抜き売上</label>
+            <div class="input-withUnit-wrapper">
+              <input class="sales-unTax" type="number" name="sales-unTax" id="sales-unTax" value=""
+                placeholder="（例）200000">
+              <label class="unit" for="sales-unTax">円</label>
+            </div>
+          </div>
+          <div class="input-item">
+            <label for="tax">消費税</label>
+            <div class="input-withUnit-wrapper">
+              <input class="tax" type="number" name="tax" value="" id="tax" placeholder="（例）20000">
+              <label class="unit" for="tax">円</label>
+            </div>
+          </div>
+          <div class="input-item">
+            <label for="sales-all">総売上</label>
+            <div class="input-withUnit-wrapper">
+              <input class="sales-all" type="number" name="sales-all" id="sales-all" value="" placeholder="（例）220000">
+              <label class="unit" for="sales-all">円</label>
+            </div>
+          </div>
 
-        <div class="input-item">
-          <label for="">役職</label>
-          <select>
-            <option class="value-blank" value="">役職を選択してください</option>
-            <option value="">店長</option>
-            <option value="">副店長</option>
-            <option value="">料理長</option>
-            <option value="">副料理長</option>
-            <option value="">バイト</option>
-            <option value="">パート</option>
-          </select>
+          <div class="input-item">
+            <label for="sales-lunch">ランチ売上</label>
+            <div class="input-withUnit-wrapper">
+              <input class="sales-lunch" type="number" name="sales-lunch" id="sales-lunch" value=""
+                placeholder="（例）150000">
+              <label class="unit" for="sales-lunch">円</label>
+            </div>
+          </div>
+          <div class="input-item">
+            <label for="sales-dinner">ディナー売上</label>
+            <div class="input-withUnit-wrapper">
+              <input class="sales-dinner" type="number" id="sales-dinner" name="sales-dinner" value=""
+                placeholder="（例）50000">
+              <label class="unit" for="sales-dinner">円</label>
+            </div>
+          </div>
         </div>
-
-        <div class="input-item">
-          <label for="">日報作成者</label>
-          <select>
-            <option value="">日報作成者を選んでください</option>
-            <option value="michi">伊藤通</option>
-            <option value="nishi">西岡</option>
-            <option value="kido">木戸</option>
-            <option value="sogo">十河</option>
-            <option value="waka">伊藤美</option>
-            <option value="matsu">松本</option>
-            <option value="ike">池田</option>
-            <option value="naka">中山</option>
-            <option value="other">その他</option>
-          </select>
-        </div>
-      </section><!-- /section -->
-      <!-- section -->
-      <section class="sales">
+      </div>
+    </section><!-- /section -->
+    <!-- section -->
+    <section class="purchase">
+      <div class="section-item-wrapper">
         <!-- section-ttl -->
-        <h2 class="section-ttl">売上</h2><!-- /section-ttl -->
-        <!-- <div class="input-item">
-          <label for="">日付</label>
-          <input type="date" name="date">
-        </div> -->
-        <div class="input-item">
-          <label for="">税抜き売上</label>
-          <input class="sales-taxExcluded" type="number" name="" id="sales-taxExcluded" value="" placeholder="半角数字">
+        <div class="section-ttl-wrapper">
+          <h2 class="section-ttl">現金出金</h2><!-- /section-ttl -->
         </div>
-        <div class="input-item">
-          <label for="">消費税</label>
-          <input class="sales-total" type="number" name="" value="" placeholder="半角数字">
-        </div>
-        <div class="input-item">
-          <label for="">総売上</label>
-          <input class="sales-total" type="number" name="" value="" placeholder="半角数字">
-        </div>
-
-        <div class="input-item">
-          <label for="">ランチ売上</label>
-          <input class="sales-lunch" type="number" name="" value="" placeholder="半角数字">
-        </div>
-        <div class="input-item">
-          <label for="">ディナー売上</label>
-          <input class="sales-dinner" type="number" name="" value="" placeholder="半角数字">
-        </div>
-      </section><!-- /section -->
-      <!-- section -->
-      <section class="purchase">
         <!-- section-ttl -->
-        <h2 class="section-ttl">現金出金</h2><!-- /section-ttl -->
-        <!-- section-ttl -->
-        <div class="input-item input-item-checkBox">
-          <div class="input-radio">
-            <input type="radio" id="category-food" name="creditCard-cp" value="dc">
-            <label for="category-food">食材</label>
+        <div class="inner">
+          <h3 class="section-subTtl">現金仕入れ</h3>
+          <!-- アコーディオン -->
+          <div class="accordion cash-shopping-accordion">
+            <!-- アコーディオンヘッダー -->
+            <dt class="accordion-header accordion__head">
+              <!-- 区分 --><span class="accordion-header-txt">食材</span><!-- /区分 -->
+              <!-- 仕入れ先 --><span class="accordion-header-txt">八百屋さん</span><!-- /仕入れ先 -->
+              <!-- 金額 --><span class="accordion-header-txt">500円</span><!-- /金額 -->
+              <i class="accordion-header-icon fas fa-arrow-circle-down"></i>
+            </dt>
+            <!-- /アコーディオンヘッダー -->
+            <!-- アコーディオンボディ -->
+            <dd class="accordion-body accordion__body">
+              <div class="accordion__body-in">
+                <!-- 現金仕入れ -->
+                <!-- チェックボックス  -->
+                <div class="input-item input-item-checkBox">
+                  <div class="input-radio">
+                    <input type="radio" id="category-food" name="cash-shopping-category" value="" checked>
+                    <label for="category-food">食材</label>
+                  </div>
+                  <div class="input-radio">
+                    <input type="radio" id="category-drink" name="cash-shopping-category" value="">
+                    <label for="category-drink">ドリンク</label>
+                  </div>
+                  <div class="input-radio">
+                    <input type="radio" id="category-exp" name="cash-shopping-category" value="">
+                    <label for="category-exp">雑費</label>
+                  </div>
+                </div>
+                <!-- /チェックボックス  -->
+                <!-- 仕入れ先 -->
+                <div class="input-item">
+                  <label class="cash-shopping-category">仕入れ先</label>
+                  <div class="input-withUnit-wrapper">
+                    <input class="cash-shopping" id="cash-shopping" type="number" name="cash-shopping" value=""
+                      placeholder="（例）300">
+                    <label class="unit" for="cash-shopping">様</label>
+                  </div>
+                </div>
+                <!-- /仕入れ先 -->
+                <!-- 仕入れ金額 -->
+                <div class="input-item">
+                  <label class="cash-shopping-category">仕入れ金額（税込）</label>
+                  <div class="input-withUnit-wrapper">
+                    <input class="cash-shopping" id="cash-shopping" type="number" name="cash-shopping" value=""
+                      placeholder="（例）300">
+                    <label class="unit" for="cash-shopping">円</label>
+                  </div>
+                </div>
+                <!-- /仕入れ金額 -->
+                <!-- /現金仕入れ -->
+              </div>
+              <!-- /アコーディオンボディ -->
+            </dd>
           </div>
-          <div class="input-radio">
-            <input type="radio" id="category-drink" name="creditCard-cp" value="jcb">
-            <label for="category-drink">ドリンク</label>
+          <!-- /アコーディオン -->
+          <!-- section-subTtl -->
+          <h2 class="section-subTtl">クレジット・その他決済</h2><!-- /section-subTtl -->
+          <!-- クレジット・その他決済のアコーディオン -->
+          <div class="accordion second-accordion">
+            <!-- アコーディオンヘッダー -->
+            <dt class="accordion-header accordion__head">
+              <!-- 支払い方法 --><span class="accordion-header-txt">UCグループ</span><!-- /支払い方法 -->
+              <!-- 支払い金額 --><span class="accordion-header-txt">300000円</span><!-- /支払い金額 -->
+              <!-- お客様氏名 --><span class="accordion-header-txt">ジョンドゥ</span><!-- /お客様氏名 -->
+              <i class="accordion-header-icon fas fa-arrow-circle-down"></i>
+            </dt>
+            <!-- /アコーディオンヘッダー -->
+            <dd class="accordion-body accordion__body">
+              <div class="accordion__body-in">
+                <div class="input-item input-item-checkBox">
+                  <!-- クレジットカードのチェックボックス  -->
+                  <div class="input-radio">
+                    <input type="radio" id="radio-card" name="check-payment" checked>
+                    <label for="radio-card">クレジットカード</label>
+                  </div>
+                  <!-- /クレジットカードのチェックボックス  -->
+                  <!-- PayPayのチェックボックス  -->
+                  <div class="input-radio">
+                    <input type="radio" id="radio-jcb" name="check-payment">
+                    <label for="radio-jcb">PayPay</label>
+                  </div>
+                  <!-- /PayPayのチェックボックス  -->
+                  <!-- その他お支払いのチェックボックス -->
+                  <div class="input-radio">
+                    <input type="radio" id="radio-ucGroup" name="check-payment" value="">
+                    <label for="radio-ucGroup">その他お支払い</label>
+                  </div>
+                  <!-- /その他お支払いのチェックボックス -->
+                </div>
+                <div class="row2-wrapper">
+                  <div class="input-item input-item-small">
+                    <label for="cardCp">カード会社</label>
+                    <select class="cardCp" id="cardCp" name="cardCp">
+                      <option value="cardCp-dc">DC</option>
+                      <option value="cardCp-jcb">JCB</option>
+                      <option value="cardCp-uc">UCグループ</option>
+                    </select>
+                  </div>
+                  <div class="input-item input-item-small">
+                    <label for="otherPrice">その他お支払い</label>
+                    <input class="otherPrice" type="text" id="otherPrice" name="otherPrice" placeholder="LINE Pay等">
+                  </div>
+                </div>
+                <div class="input-item">
+                  <label for="">お支払い金額</label>
+                  <div class="input-withUnit-wrapper">
+                    <input class="creditCard-price" type="number" name="" value="" placeholder="半角数字">
+                    <label class="unit" for="sales-unTax">円</label>
+                  </div>
+                </div>
+                <!-- <div class="input-checkbox">
+                    <input type="checkbox" id="checkbox" name="creditCard-signCheck" value="creditCard-signCheck">
+                    <label for="checkbox">サインあり</label>
+                  </div> -->
+                <div class="input-item">
+                  <label for="">お客様氏名</label>
+                  <div class="input-withUnit-wrapper">
+                    <input class="creditCard-name" type="text" name="creditCard-guestName" value=""
+                      placeholder="（例）田中 太郎">
+                    <label class="unit" for="sales-unTax">様</label>
+                  </div>
+                </div>
+              </div>
+            </dd>
           </div>
-          <div class="input-radio">
-            <input type="radio" id="category-exp" name="creditCard-cp" value="ucGroup">
-            <label for="category-exp">雑費</label>
-          </div>
+          <!-- /クレジット・その他決済のアコーディオン -->
         </div>
-        <div class="input-item">
-          <label for="">仕入れ金額（税込）</label>
-          <input class="creditCard-price" type="number" name="" value="" placeholder="半角数字">
-        </div>
-      </section><!-- /section -->
-      <!-- section -->
-      <section class="creditCard">
-        <div class="input-item input-item-checkBox">
-          <div class="input-radio">
-            <input type="radio" id="radio-dc" name="creditCard-cp" value="dc">
-            <label for="radio-dc">DC</label>
-          </div>
-          <div class="input-radio">
-            <input type="radio" id="radio-jcb" name="creditCard-cp" value="jcb">
-            <label for="radio-jcb">JCB</label>
-          </div>
-          <div class="input-radio">
-            <input type="radio" id="radio-ucGroup" name="creditCard-cp" value="ucGroup">
-            <label for="radio-ucGroup">UCグループ</label>
-          </div>
-        </div>
-        <div class="input-item">
-          <label for="">クレジット支払金額</label>
-          <input class="creditCard-price" type="number" name="" value="" placeholder="半角数字">
-        </div>
-        <!-- <div class="input-checkbox">
-          <input type="checkbox" id="checkbox" name="creditCard-signCheck" value="creditCard-signCheck">
-          <label for="checkbox">サインあり</label>
-        </div> -->
-        <div class="input-item">
-          <label for="">お客様氏名</label>
-          <input class="creditCard-name" type="text" name="creditCard-guestName" value="" placeholder="名無しの権兵衛 　(サインなしの場合は無記入可)">
-        </div>
-      </section>
-      <!-- /section -->
-      <!-- btn-wrapper -->
-      <div class="btn-wrapper"><a href="#" class="btn">報告書を作成する</a></div>
-      <!-- /btn-wrapper -->
-    </div>
+      </div>
+    </section>
+    <!-- /section -->
+    <!-- btn-wrapper -->
+    <div class="btn-wrapper"><a href="#" class="btn">報告書を作成する</a></div>
+    <!-- /btn-wrapper -->
+    <!-- btn-wrapper -->
+    <div class="btn-wrapper btn-hidden"><a href="#" class="btn">報告書を作成する</a></div>
+    <!-- /btn-wrapper -->
   </main><!-- /main -->
   <!-- footer -->
   <footer>copyright</footer><!-- /footer -->
   <script src="/js/jquery.js"></script>
   <script src="/js/script.js"></script>
 </body>
-
 </html>

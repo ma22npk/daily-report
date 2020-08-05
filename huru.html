@@ -1,0 +1,193 @@
+<!doctype html>
+<!-- 日本語サイトであることを明示-->
+<html lang="ja">
+
+<head>
+  <!-- Required meta tags -->
+  <!--文字コードはutf-8を指定-->
+  <meta charset="utf-8">
+  <!--ファビコンを指定する（タイトルバーの横のアイコン-->
+  <link rel="icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--サイトの説明文を書くパートなのでかなり重要！-->
+  <meta name="description" content="説明文">
+  <!--headタグの直前にCSSを読み込む-->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- タイトルバー(googleで検索したときの表示名になるのでSEO的に超重要)-->
+  <title>革新的日報アプリ</title>
+</head>
+
+<body>
+  <header>
+    <h2 class="subtitle">Dailiy Report</h2><br>
+    <h1 class="main_title">日報</h1>
+  </header>
+  <!--日時 -->
+  <section class="time">
+    <h4 class="subtitle">作成日</h4>
+    <select class="month">
+      <option value="">月</option>
+      <option value="jan">1月</option>
+      <option value="feb">2月</option>
+      <option value="mar">3月</option>
+      <option value="apr">4月</option>
+      <option value="may">5月</option>
+      <option value="jun">6月</option>
+      <option value="jul">7月</option>
+      <option value="aug">8月</option>
+      <option value="sep">9月</option>
+      <option value="oct">10月</option>
+      <option value="nov">11月</option>
+      <option value="dec">12月</option>
+    </select>
+    <select class="form-custom">
+      <option value="">日</option>
+      <option value="1d">1日</option>
+      <option value="2d">2日</option>
+      <option value="3d">3日</option>
+      <option value="4d">4日</option>
+      <option value="5d">5日</option>
+      <option value="6d">6日</option>
+      <option value="7d">7日</option>
+      <option value="8d">8日</option>
+      <option value="9d">9日</option>
+      <option value="10d">10日</option>
+      <option value="11d">11日</option>
+      <option value="12d">12日</option>
+      <option value="13d">13日</option>
+      <option value="14d">14日</option>
+      <option value="15d">15日</option>
+      <option value="16d">16日</option>
+      <option value="17d">17日</option>
+      <option value="18d">18日</option>
+      <option value="19d">19日</option>
+      <option value="20d">20日</option>
+      <option value="21d">21日</option>
+      <option value="22d">22日</option>
+      <option value="23d">23日</option>
+      <option value="24d">24日</option>
+      <option value="25d">25日</option>
+      <option value="26d">26日</option>
+      <option value="27d">27日</option>
+      <option value="28d">28日</option>
+      <option value="29d">29日</option>
+      <option value="30d">30日</option>
+      <option value="31d">31日</option>
+    </select>
+    <!-- rowとは組という意味-->
+    <div class="row mb-3">
+      <select class="form-custom">
+        <option value="">西暦</option>
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+      </select>
+    </div>
+  </section>
+  <section class="staff">
+    <h4 class="subtitle">店舗・担当者・スタッフ</h4>
+    <h5 class="heading">店舗</h5>
+    <select class="form-custom">
+      <option value="">店舗を選択してください</option>
+      <option value="kaya">加屋</option>
+      <option value="nishika">にしか</option>
+      <option value="kayamon">カヤモンジャ</option>
+      <option value="konozu">コノズコーヒー</option>
+    </select>
+    <h5 class="heading">担当者</h5>
+    <select class="form-custom">
+      <option value="">日報作成者を選んでください</option>
+      <option value="michi">伊藤通</option>
+      <option value="nishi">西岡</option>
+      <option value="kido">木戸</option>
+      <option value="sogo">十河</option>
+      <option value="waka">伊藤美</option>
+      <option value="matsu">松本</option>
+      <option value="ike">池田</option>
+      <option value="naka">中山</option>
+      <option value="other">その他</option>
+    </select>
+    <h5 class="heading">勤務時間</h5>
+    <input class="form-custom" type="number" name="" value="" placeholder="半角数字">
+    <h5 class="unit">時間</h5>
+  </section>
+
+  <!--売り上げ-->
+  <section class="sales">
+    <h4 class="subtitle">売り上げ</h4>
+    <div class="row md-12">
+      <h5 class="heading">総売上</h5><br>
+      <input class="form-custom" type="number" name="" value="" placeholder="半角数字">
+      <h5 class="unit sub-menu-nav">円</h5><br>
+      <h5 class="heading">税別売上</h5>
+      <input class="form-custom" type="number" name="" value="" placeholder="半角数字">
+      <h5 class="unit">円</h5><br>
+      <h5 class="heading">消費税(10%)</h5>
+      <input class="form-custom" type="number" name="" value="" placeholder="半角数字">
+      <h5 class="unit">円</h5><br>
+      <h5 class="heading">ランチ売り上げ</h5>
+      <input class="form-custom" type="number" name="" value="" placeholder="半角数字">
+      <h5 class="unit">円</h5><br>
+      <h5 class="heading">人事売上</h5>
+      <input class="form-custom" type="number" name="" value="" placeholder="半角数字">
+      <h5 class="unit">円</h5><br>
+    </div>
+  </section>
+  <section class="client">
+    <div class="container">
+      <div class="row">
+        <h4 class="subtitle">仕入れ内訳</h4>
+        <select class="purchaseCategory">
+          <option value="">区分</option>
+          <option>食材</option>
+          <option>ドリンク</option>
+          <option>雑費</option>
+        </select>
+        <select class="form-custom">
+          <option value="">仕入れ先</option>
+          <option>マルホリ</option>
+          <option>業務スーパー</option>
+          <option>アミカ</option>
+          <option>木曽岬農業センター</option>
+          <option>アミカ</option>
+          <option>アクティブ</option>
+          <option>ゴールデンフーズ</option>
+          <option>フーズワールド</option>
+          <option>中島屋</option>
+          <option>コカコーラ</option>
+          <option>タチヤ</option>
+          <option>その他</option>
+        </select>
+        <input class="form-custom" type="number" name="" value="" placeholder="金額">
+        <h5 class="unit">円</h5>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h4 class="subtitle">クレジット内訳</h4>
+    <input class="form-custom" type="text" name="" value="" placeholder="お名前">
+    <select class="form-custom">
+      <option value="">クレジット会社</option>
+      <option>JCB</option>
+      <option>DC</option>
+      <option>UCグループ</option>
+      <option>その他</option>
+    </select>
+    <input class="form-custom" type="number" name="" value="" placeholder="半角数字">
+    <h5 class="unit">円</h5>
+  </section>
+</body>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="jquery.js"></script>
+<script type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

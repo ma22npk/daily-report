@@ -16,7 +16,8 @@ $color-white: #F8F8FF;
 //文字色
 $color-black:#070700;
 //
-$color-border: #505050;
+$color-border: #383a3a;
+$color-border2: #c7c5c5;
 // フォントファミリー ---------------------------
 $fontFamily-: -apple-system,
 system-ui,
@@ -26,15 +27,47 @@ Roboto,
 "Helvetica Neue",
 Arial,
 sans-;
+// ボックスシャドウ ---------------------------
+$boxShadow:0 1px 5px 1px rgba(0, 0, 0, .3);
+$boxShadow2:0 1px 5px 1px rgba(255, 255, 255, .3);
+
+// ホバーアニメ ---------------------------
+@mixin hover1{
+  opacity: .6;
+  transition: all 0.1s;
+  cursor: pointer;
+}
 
 /* フォントの設定 ---------------------------*/
+//セクションタイトル  
+.section-ttl {
+  font-family: $fontFamily-;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 35px;
+  color: $color-white;
+  text-align: center;
+}
+
+//セクションサブタイトル  
+.section-subTtl {
+  font-family: $fontFamily-;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 35px;
+  color: $color-black;
+  margin-bottom: 10px;
+}
+
+
 input::placeholder {
   font-family: $fontFamily-;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 200;
   line-height: 28px;
-  color: #999999;
+  color: #c7c5c5;
 }
+
 
 /* アイテムの設定 ==========================*/
 //ラベルをフォーカスしても選べるように
@@ -48,16 +81,21 @@ label {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
-  background: linear-gradient(45deg, #75D701 30%, #56A902 90%);
+  border: solid 2px #fff;
+  background: $color-green;
   box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .3);
   border-radius: 999px;
-  padding: 15px 60px;
+  padding: 15px 30px;
   text-decoration: none;
 }
 
 .btn:hover,
 .btn:focus {
-  text-decoration: none;
+transition: all .4s;
+  color: #fff;
+  border: solid 2px #fff;
+  background: $color-darkGreen;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .3);
 }
 
 .btn::-moz-foucus-inner {
@@ -69,6 +107,12 @@ label {
   box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 0.1);
 }
 
+//入力が終わるまでボタンを隠す
+.btn-hidden {
+  opacity: .5;
+  pointer-events: none;
+}
+
 /* インプット ---------------------------*/
 //入力フォームの本体
 select,
@@ -78,6 +122,8 @@ input {
   border: 0;
   background-color: #fff;
   outline: 0;
+  font-weight: bold;
+  color: $color-black;
 }
 
 //幅を設定するwrapper
@@ -90,7 +136,7 @@ select,
 input {
   width: 100%;
   height: 40px;
-  padding: 3px 5px;
+  padding: 2px 12px;
   border: 1px solid lightgrey;
   border-radius: 2px;
   transition: border-color ease .2s;
@@ -99,6 +145,10 @@ input {
 select:focus,
 input:focus {
   border-color: $color-lightGreen;
+}
+
+select:hover {
+  cursor: pointer;
 }
 
 // ラジオボタン ---------------------------
@@ -268,7 +318,7 @@ header {
   width: 100%;
 
   .inputStep-wrapper {
-width: 400px;
+    width: 360px;
     background-color: $color-white;
     margin: 10px auto;
     display: flex;
@@ -278,15 +328,65 @@ width: 400px;
     .inputStep {
       display: grid;
       place-items: center;
-      width: 120px;
-      height: 40px;
-      background: linear-gradient(45deg, #75D701 30%, #56A902 90%);
-      box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .3);
-      border-radius: 15px;
-      font-size: 22px;
+      width: 110px;
+      height: 30px;
+      border: solid 2px #fff;
+      border: solid 2px #56A902;
+      // background: linear-gradient(45deg, #75D701 30%, #56A902 90%);
+      box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .1);
+      border-radius: 5px;
+      font-size: 18px;
       font-weight: 700;
-      color: #fff;
+      color: #56A902;
     }
+  }
+}
+
+//「完了」スタンプ
+.stamp-complete {
+  position: relative;
+  transition: all;
+
+  &::after {
+    transform: rotate(-20deg);
+    position: absolute;
+    left: -20px;
+    display: grid;
+    place-items: center;
+    content: "完了";
+    line-height: 100%;
+    border: solid red 3px;
+    border-radius: 50%;
+    color: red;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    font-size: 14px;
+    opacity: .9;
+  }
+}
+
+//「完璧」スタンプ
+.stamp-perfect {
+  position: relative;
+
+  &::after {
+    transform: rotate(-20deg);
+    position: absolute;
+    left: -20px;
+    display: grid;
+    place-items: center;
+    content: "完璧";
+    line-height: 100%;
+    border: solid blue 3px;
+    border-radius: 50%;
+    color: blue;
+    width: 36px;
+    height: 36px;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: .9;
   }
 }
 
@@ -295,19 +395,52 @@ main {
   width: 100%;
   margin: 120px 0;
 
-  .section-ttl {
-    font-family: $fontFamily-;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 35px;
-    color: $color-black;
+  section {
+    margin: 10px auto;
+    height: 100%;
+    padding: 20px 0;
+
+    .section-item-wrapper {
+      box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .3);
+      border-radius: 20px;
+      width: 370px;
+      margin: 0 auto;
+    }
+
+    .section-ttl-wrapper {
+      display: grid;
+      place-items: center;
+      background-color: $color-lightGreen;
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+      padding: 10px 0 10px;
+
+    }
   }
 
-  .form-items {
-    width: 670px;
-    margin: 0 auto;
+  .inner {
+    width: 100%;
+    border-radius: 0 0 20px 20px;
 
-    label {
+    .row2-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      .input-item.input-item-small {
+        width: calc((100% - 20px) / 2 - 1px);
+      }
+    }
+
+    .title-area {
+      background-color: $color-green;
+      display: grid;
+      place-items: center;
+    }
+
+
+    label,
+    .accordion-header-txt {
       font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       font-size: 16px;
       font-weight: 700;
@@ -315,6 +448,71 @@ main {
       color: $color-black;
     }
   }
+}
+
+.input-withUnit-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+
+  input {
+    width: calc((100% - (10px + 30px)));
+  }
+
+  .unit {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin-top: auto;
+  }
+}
+
+/* アコーディオン ---------------------------*/
+.accordion {
+  background-color: $color-white;
+  padding: 4px 8px;
+  box-shadow: $boxShadow;
+  border-radius: 8px;
+  margin: 0 0 20px;
+
+  .accordion-header {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      @include hover1;
+    }
+
+    .accordion-header-txt {
+      display: grid;
+      place-items: center;
+      width: 30%;
+      height: auto;
+      word-break: break-all; //はみ出す要素を折り返す
+      line-height: 24px;
+    }
+
+
+    .accordion-header-icon {
+      font-size: 20px;
+      color: $color-black;
+    }
+
+  }
+
+  .accordion-body {
+    margin: 10px auto;
+    border-top: solid 1px $color-border2;
+  }
+}
+
+.second-accordion {
+  background-color: #8bd8a52d;
 }
 
 
@@ -331,23 +529,14 @@ main {
     width: 100%;
     margin: 120px 0 40px;
 
-    .section-ttl {
-      font-family: $fontFamily-;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 35px;
-      color: $color-black;
-      margin: 20px 0;
-    }
+
 
     //フォーム全体を包む
-    .form-items {
-      width: 400px;
+    .inner {
+      width: 100%;
       margin: 0 auto;
       padding: 20px 15px 40px;
       background: #fff;
-      box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .3);
-      border-radius: 20px;
 
       .input-item {
         width: 100%;
@@ -365,13 +554,12 @@ main {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        flex-direction: column;
 
         .input-radio {
-          width: calc((100% - (10px * 2))/ 3 - 1px);
+          margin-bottom: 10px;
         }
-
       }
-
     }
 
     .btn-wrapper {
